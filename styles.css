@@ -103,6 +103,8 @@ section {
 h2 {
   font-size: 34px;
   margin-bottom: 25px;
+  border-bottom: 3px solid #6c5ce7;
+  padding-bottom: 12px;
 }
 
 .about {
@@ -150,47 +152,66 @@ h2 {
   text-decoration: none;
 }
 
+/* HABILIDADES */
+
 .skills {
   display: flex;
   flex-wrap: wrap;
+  gap: 26px;
+  margin-top: 55px;
+}
+
+.skills span {
+  display: flex;
+  align-items: center;
   gap: 14px;
+  padding: 18px 32px;
+  border-radius: 999px;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 0 -5px 10px rgba(0,0,0,0.35),
+    inset 0 4px 8px rgba(255,255,255,0.18),
+    0 12px 25px rgba(0,0,0,0.35);
 }
 
-.skills span:nth-child(1) {
-  background: #e34c26;
-  border-color: #ff7a59;
+.skills i {
+  font-size: 32px;
 }
 
-.skills span:nth-child(2) {
-  background: #264de4;
-  border-color: #6b8cff;
+.skills .html {
+  background: linear-gradient(180deg, #ff5a1f, #c92a00);
 }
 
-.skills span:nth-child(3) {
-  background: #f7df1e;
-  color: #1b1b1b;
-  border-color: #fff176;
+.skills .css {
+  background: linear-gradient(180deg, #198cff, #004eb8);
 }
 
-.skills span:nth-child(4) {
-  background: #b07219;
-  border-color: #f39c12;
+.skills .js {
+  background: linear-gradient(180deg, #ffd93b, #c99a00);
+  color: #1a1a1a;
 }
 
-.skills span:nth-child(5) {
-  background: linear-gradient(135deg, #3776ab, #ffd43b);
-  color: #111;
-  border-color: #ffd43b;
+.skills .js i {
+  color: #1a1a1a;
 }
 
-.skills span:nth-child(6) {
-  background: #00758f;
-  border-color: #00bcd4;
+.skills .java {
+  background: linear-gradient(180deg, #ff3b14, #b91d00);
 }
 
-.skills span:nth-child(7) {
-  background: #24292f;
-  border-color: #6e7681;
+.skills .python {
+  background: linear-gradient(180deg, #1e90ff, #0059b8);
+}
+
+.skills .sql {
+  background: linear-gradient(180deg, #00c853, #007c2f);
+}
+
+.skills .github {
+  background: linear-gradient(180deg, #7b3ff2, #35106e);
 }
 
 footer {
@@ -211,5 +232,14 @@ footer {
 
   .hero p {
     font-size: 17px;
+  }
+
+  .skills span {
+    font-size: 17px;
+    padding: 14px 22px;
+  }
+
+  .skills i {
+    font-size: 25px;
   }
 }
