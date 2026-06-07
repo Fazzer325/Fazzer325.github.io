@@ -22,28 +22,13 @@ body {
     #0f1020;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav h2 {
-  margin: 0;
-}
-
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 .hero-content {
   max-width: 750px;
-  margin-top: 130px;
+  padding-top: 130px;
 }
 
 .tag {
+  display: inline-block;
   background: rgba(255, 255, 255, 0.12);
   padding: 10px 16px;
   border-radius: 999px;
@@ -91,9 +76,9 @@ h1 b {
 }
 
 main {
-  max-width: 1100px;
+  max-width: 1500px;
   margin: auto;
-  padding: 70px 20px;
+  padding: 70px 40px;
 }
 
 section {
@@ -101,10 +86,10 @@ section {
 }
 
 h2 {
-  font-size: 34px;
-  margin-bottom: 25px;
+  font-size: 48px;
+  margin-bottom: 35px;
   border-bottom: 3px solid #6c5ce7;
-  padding-bottom: 12px;
+  padding-bottom: 25px;
 }
 
 .about {
@@ -153,71 +138,74 @@ h2 {
 }
 
 /* HABILIDADES */
+
 .skills {
   display: flex;
   flex-wrap: wrap;
   gap: 26px;
-  margin-top: 55px;
+  margin-top: 60px;
 }
 
-.skills span {
-  display: inline-flex;
+.skill {
+  display: inline-flex !important;
   align-items: center;
-  gap: 14px;
+  justify-content: center;
+  gap: 16px;
 
-  padding: 18px 32px;
-  min-height: 70px;
+  min-height: 78px;
+  padding: 18px 34px;
 
-  border-radius: 999px;
+  border-radius: 999px !important;
   overflow: hidden;
 
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
 
   border: 1px solid rgba(255, 255, 255, 0.18);
 
   box-shadow:
-    inset 0 -6px 12px rgba(0, 0, 0, 0.35),
-    inset 0 5px 10px rgba(255, 255, 255, 0.20),
-    0 12px 25px rgba(0, 0, 0, 0.35);
+    inset 0 -7px 14px rgba(0, 0, 0, 0.35),
+    inset 0 6px 12px rgba(255, 255, 255, 0.22),
+    0 14px 28px rgba(0, 0, 0, 0.4);
 }
 
-.skills i {
-  font-size: 32px;
+.skill i {
+  font-size: 36px;
 }
 
-.skills .html {
-  background: linear-gradient(180deg, #ff5a1f, #c92a00);
+.html {
+  background: linear-gradient(180deg, #ff6a2a 0%, #e34c26 45%, #b92b00 100%);
 }
 
-.skills .css {
-  background: linear-gradient(180deg, #198cff, #004eb8);
+.css {
+  background: linear-gradient(180deg, #249cff 0%, #264de4 45%, #003f9e 100%);
 }
 
-.skills .js {
-  background: linear-gradient(180deg, #ffd93b, #c99a00);
+.js {
+  background: linear-gradient(180deg, #ffe96b 0%, #f7df1e 45%, #c89500 100%);
   color: #1a1a1a;
 }
 
-.skills .js i {
+.js i {
   color: #1a1a1a;
 }
 
-.skills .java {
-  background: linear-gradient(180deg, #ff3b14, #b91d00);
+.java {
+  background: linear-gradient(180deg, #ff5a2b 0%, #d73800 45%, #9f1d00 100%);
 }
 
-.skills .python {
-  background: linear-gradient(180deg, #1e90ff, #0059b8);
+.python {
+  background: linear-gradient(180deg, #249cff 0%, #3776ab 50%, #00509e 100%);
 }
 
-.skills .sql {
-  background: linear-gradient(180deg, #00c853, #007c2f);
+.sql {
+  background: linear-gradient(180deg, #00d96a 0%, #00a846 45%, #006d2d 100%);
 }
 
-.skills .github {
-  background: linear-gradient(180deg, #7b3ff2, #35106e);
+.github {
+  background: linear-gradient(180deg, #8e50ff 0%, #5b2bbd 45%, #2b0d62 100%);
 }
 
 footer {
@@ -233,19 +221,28 @@ footer {
   }
 
   .hero-content {
-    margin-top: 90px;
+    padding-top: 90px;
   }
 
   .hero p {
     font-size: 17px;
   }
 
-  .skills span {
-    font-size: 17px;
+  main {
+    padding: 50px 20px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  .skill {
+    font-size: 18px;
+    min-height: 58px;
     padding: 14px 22px;
   }
 
-  .skills i {
-    font-size: 25px;
+  .skill i {
+    font-size: 26px;
   }
 }
