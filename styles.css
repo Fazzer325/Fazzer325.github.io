@@ -156,12 +156,41 @@ h2 {
   gap: 14px;
 }
 
-.skills span {
-  background: #18192e;
-  border: 1px solid #2c2d45;
-  padding: 12px 18px;
-  border-radius: 999px;
-  color: #ffffff;
+.skills span:nth-child(1) {
+  background: #e34c26;
+  border-color: #ff7a59;
+}
+
+.skills span:nth-child(2) {
+  background: #264de4;
+  border-color: #6b8cff;
+}
+
+.skills span:nth-child(3) {
+  background: #f7df1e;
+  color: #1b1b1b;
+  border-color: #fff176;
+}
+
+.skills span:nth-child(4) {
+  background: #b07219;
+  border-color: #f39c12;
+}
+
+.skills span:nth-child(5) {
+  background: linear-gradient(135deg, #3776ab, #ffd43b);
+  color: #111;
+  border-color: #ffd43b;
+}
+
+.skills span:nth-child(6) {
+  background: #00758f;
+  border-color: #00bcd4;
+}
+
+.skills span:nth-child(7) {
+  background: #24292f;
+  border-color: #6e7681;
 }
 
 footer {
