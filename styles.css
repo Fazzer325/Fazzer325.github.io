@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  background: pink;
+}
+
+main {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
