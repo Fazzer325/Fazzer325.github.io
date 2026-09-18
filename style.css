@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    display: flex;
+    background-color: #9e9c9c;
+}
+
+.Panel-Principal{
+    background-color: #e4e4e4;
+    margin: 25vh auto;
+    height: 30vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 10px double #2b2b2b;
+
+}
+
+#Nombre{
+    margin-top: 2vh;
+    font-size: xx-large;
+}
+
+#Descripcion{
+    font-size: large;
+    margin: 2vh;
+}
