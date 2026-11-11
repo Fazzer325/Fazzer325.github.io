@@ -10,6 +10,8 @@ Muestra mis proyectos web en producción (Railway y GitHub Pages), otros trabajo
 - `style.css` — estilos con tema claro y oscuro automático.
 - `script.js` — animación de la terminal del inicio (se desactiva con "reducir movimiento").
 - `assets/projects/` — capturas de los proyectos.
+- `proyectos/atmosfera/` — copia publicada de Atmósfera (clima en vivo, de Ambientes_Web).
+- `proyectos/air-player/` — copia de Air Player (de Retos_Web) que entra automáticamente con la cuenta de demostración `githubtest`.
 
 ## Diseño
 

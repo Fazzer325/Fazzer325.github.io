@@ -65,3 +65,20 @@
 
   setTimeout(next, 450);
 })();
+
+// Botones "Copiar" de la cuenta de demostración.
+document.querySelectorAll(".copy[data-copy]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(button.dataset.copy);
+      button.textContent = "Copiado";
+      button.setAttribute("data-copied", "");
+      setTimeout(() => {
+        button.textContent = "Copiar";
+        button.removeAttribute("data-copied");
+      }, 1600);
+    } catch {
+      button.textContent = "Selecciónalo";
+    }
+  });
+});

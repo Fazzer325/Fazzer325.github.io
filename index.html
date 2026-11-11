@@ -103,9 +103,15 @@ php  laravel  javascript  java  python  mysql
           <ul class="tags" aria-label="Tecnologías">
             <li>Laravel 13</li><li>PHP 8.3</li><li>MySQL 8</li><li>Vite</li><li>Blade</li><li>Railway</li>
           </ul>
+          <div class="demo" aria-label="Cuenta de demostración">
+            <p class="demo__title">Pruébalo con la cuenta de demostración</p>
+            <dl class="demo__creds">
+              <div><dt>Usuario</dt><dd><code>githubtest2</code><button class="copy" type="button" data-copy="githubtest2" aria-label="Copiar usuario">Copiar</button></dd></div>
+              <div><dt>Contraseña</dt><dd><code>githubtest2</code><button class="copy" type="button" data-copy="githubtest2" aria-label="Copiar contraseña">Copiar</button></dd></div>
+            </dl>
+          </div>
           <div class="project__links">
-            <a class="link" href="https://rentasaurora.up.railway.app/" target="_blank" rel="noopener">Abrir sitio<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
-            <span class="note">Acceso solo con cuenta interna</span>
+            <a class="link" href="https://rentasaurora.up.railway.app/login" target="_blank" rel="noopener">Abrir sitio<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
           </div>
         </div>
       </article>
@@ -134,8 +140,8 @@ php  laravel  javascript  java  python  mysql
         </article>
 
         <article class="project">
-          <a class="shot" href="https://github.com/Fazzer325/Ambientes_Web/tree/main/src/_3Web%20Clima%20IA" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <span class="shot__bar"><i></i><i></i><i></i><span class="shot__url">atmosfera · clima en vivo</span></span>
+          <a class="shot" href="proyectos/atmosfera/" tabindex="-1" aria-hidden="true">
+            <span class="shot__bar"><i></i><i></i><i></i><span class="shot__url">fazzer325.github.io/proyectos/atmosfera</span></span>
             <img src="assets/projects/clima.webp" alt="" width="1280" height="800" loading="lazy">
           </a>
           <div class="project__body">
@@ -150,7 +156,8 @@ php  laravel  javascript  java  python  mysql
               <li>JavaScript</li><li>Fetch API</li><li>Open-Meteo</li><li>CSS</li><li>node:test</li>
             </ul>
             <div class="project__links">
-              <a class="link" href="https://github.com/Fazzer325/Ambientes_Web/tree/main/src/_3Web%20Clima%20IA" target="_blank" rel="noopener">Ver código<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+              <a class="link" href="proyectos/atmosfera/">Abrir sitio<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+              <a class="link link--muted" href="https://github.com/Fazzer325/Ambientes_Web/tree/main/src/_3Web%20Clima%20IA" target="_blank" rel="noopener">Código</a>
             </div>
           </div>
         </article>
@@ -160,14 +167,12 @@ php  laravel  javascript  java  python  mysql
         <div class="project__body project__body--wide">
           <div>
             <h3>Retos Web</h3>
-            <p class="project__kind">Tres aplicaciones hechas para un concurso de desarrollo web</p>
+            <p class="project__kind">Aplicaciones hechas para un concurso de desarrollo web</p>
             <p>
               Cada reto se evaluó por interfaz, lógica, orden del código y una URL pública funcional.
-              El reproductor y Matlingo guardan la sesión y las preferencias de cada usuario en el navegador.
             </p>
           </div>
           <div class="project__links">
-            <a class="link" href="https://fazzer325.github.io/Retos_Web/">Ver colección<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
             <a class="link link--muted" href="https://github.com/Fazzer325/Retos_Web" target="_blank" rel="noopener">Código</a>
           </div>
         </div>
@@ -180,17 +185,10 @@ php  laravel  javascript  java  python  mysql
             </a>
           </li>
           <li class="mini">
-            <a href="https://fazzer325.github.io/Retos_Web/Reproductor/">
+            <a href="proyectos/air-player/">
               <span class="shot shot--sm"><img src="assets/projects/reproductor.webp" alt="" width="1280" height="800" loading="lazy"></span>
               <strong>Air Player</strong>
-              <span>Reproductor de música con lista, progreso, aleatorio, favoritos y volumen por cuenta.</span>
-            </a>
-          </li>
-          <li class="mini">
-            <a href="https://fazzer325.github.io/Retos_Web/Matlingo/">
-              <span class="shot shot--sm"><img src="assets/projects/matlingo.webp" alt="" width="1280" height="800" loading="lazy"></span>
-              <strong>Matlingo</strong>
-              <span>Práctica de matemáticas por temas con vidas, avance y puntuación final.</span>
+              <span>Reproductor de música con lista, progreso, aleatorio, favoritos y volumen por cuenta. Entra directo con la cuenta de demostración.</span>
             </a>
           </li>
         </ul>
@@ -267,22 +265,36 @@ php  laravel  javascript  java  python  mysql
 
     <!-- Contacto -->
     <section id="contacto" class="section wrap contact" aria-labelledby="contacto-h">
-      <h2 id="contacto-h">¿Trabajamos juntos?</h2>
-      <p>Busco prácticas profesionales y proyectos donde pueda aportar en desarrollo web o seguridad. Escríbeme por Discord o revisa mi código en GitHub.</p>
-      <div class="hero__actions">
-        <a class="btn btn--dark" href="https://discord.com/users/437798983050723330" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.32 4.37A19.8 19.8 0 0 0 15.4 2.85a13.7 13.7 0 0 0-.63 1.29 18.4 18.4 0 0 0-5.5 0 13 13 0 0 0-.64-1.29 19.7 19.7 0 0 0-4.92 1.52C.6 9.05-.24 13.6.18 18.1a19.9 19.9 0 0 0 6.03 3.05c.49-.66.92-1.36 1.29-2.1a12.9 12.9 0 0 1-2.03-.97l.5-.39a14.2 14.2 0 0 0 12.06 0l.5.39c-.65.38-1.33.71-2.04.98.37.73.8 1.43 1.29 2.09a19.8 19.8 0 0 0 6.04-3.05c.5-5.2-.84-9.72-3.5-13.73ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42c1.21 0 2.18 1.09 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42c1.21 0 2.18 1.09 2.16 2.42 0 1.34-.95 2.42-2.16 2.42Z"/></svg>
-          Discord · @Fazzer
-        </a>
-        <a class="btn btn--ghost" href="https://github.com/Fazzer325" target="_blank" rel="noopener">github.com/Fazzer325</a>
+      <div class="section__head">
+        <h2 id="contacto-h">Contacto</h2>
+        <p>Cristopher Leonardo Ramos Ramírez · Estudiante de Ingeniería en Sistemas y Ciberseguridad.</p>
       </div>
+      <ul class="contact__list">
+        <li>
+          <a class="contact__item" href="https://github.com/Fazzer325" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <span class="contact__label">GitHub</span>
+            <span class="contact__value">github.com/Fazzer325</span>
+          </a>
+        </li>
+        <li>
+          <a class="contact__item" href="https://discord.com/users/437798983050723330" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.32 4.37A19.8 19.8 0 0 0 15.4 2.85a13.7 13.7 0 0 0-.63 1.29 18.4 18.4 0 0 0-5.5 0 13 13 0 0 0-.64-1.29 19.7 19.7 0 0 0-4.92 1.52C.6 9.05-.24 13.6.18 18.1a19.9 19.9 0 0 0 6.03 3.05c.49-.66.92-1.36 1.29-2.1a12.9 12.9 0 0 1-2.03-.97l.5-.39a14.2 14.2 0 0 0 12.06 0l.5.39c-.65.38-1.33.71-2.04.98.37.73.8 1.43 1.29 2.09a19.8 19.8 0 0 0 6.04-3.05c.5-5.2-.84-9.72-3.5-13.73ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42c1.21 0 2.18 1.09 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42c1.21 0 2.18 1.09 2.16 2.42 0 1.34-.95 2.42-2.16 2.42Z"/></svg>
+            <span class="contact__label">Discord</span>
+            <span class="contact__value">@Fazzer</span>
+          </a>
+        </li>
+      </ul>
     </section>
   </main>
 
   <footer class="footer">
     <div class="wrap footer__inner">
       <span>© 2026 Cristopher Leonardo Ramos Ramírez</span>
-      <span>Hecho a mano con HTML, CSS y JavaScript · Publicado en GitHub Pages</span>
+      <a class="footer__gh" href="https://github.com/Fazzer325" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        github.com/Fazzer325
+      </a>
     </div>
   </footer>
 

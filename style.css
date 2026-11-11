@@ -625,7 +625,7 @@ a.shot:hover,
 
 .minis {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -739,18 +739,6 @@ a.shot:hover,
   padding-bottom: var(--section-gap);
 }
 
-.contact h2 {
-  font-size: clamp(36px, 6vw, 56px);
-  font-weight: 450;
-  line-height: 1.05;
-  letter-spacing: -0.055em;
-}
-
-.contact > p {
-  max-width: 36em;
-  margin-top: 16px;
-  font-size: 17px;
-}
 
 /* ---------- Footer ---------- */
 
@@ -844,5 +832,137 @@ a.shot:hover,
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+/* ---------- Cuenta de demostración ---------- */
+
+.demo {
+  margin-top: 8px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--sunken);
+  box-shadow: 0 0 0 1px var(--hairline);
+}
+
+.demo__title {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.demo__creds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin: 10px 0 0;
+}
+
+.demo__creds > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.demo__creds dt {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.demo__creds dd {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.demo__creds code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.copy {
+  height: 24px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--hairline);
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.copy:hover {
+  color: var(--ink);
+  box-shadow: 0 0 0 1px var(--line-strong);
+}
+
+.copy[data-copied] {
+  color: var(--accent);
+}
+
+/* ---------- Contacto ---------- */
+
+.contact__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: -16px;
+}
+
+.contact__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  align-items: center;
+  padding: 18px 20px;
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--hairline);
+  text-decoration: none;
+  transition: box-shadow 0.15s ease;
+}
+
+.contact__item:hover {
+  box-shadow: 0 0 0 1px var(--line-strong);
+}
+
+.contact__item .icon {
+  grid-row: 1 / 3;
+  width: 22px;
+  height: 22px;
+  color: var(--ink);
+}
+
+.contact__label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.contact__value {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.footer__gh {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer__gh:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 720px) {
+  .contact__list {
+    grid-template-columns: 1fr;
   }
 }
