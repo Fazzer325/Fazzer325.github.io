@@ -73,9 +73,9 @@
       position: fixed;
       left: 0;
       width: 100%;
-      height: 64px;
-      background: url("gato.webp") repeat-x;
-      background-size: 64px 64px;
+      height: 72px;
+      background: url("gato-recorte.png") repeat-x;
+      background-size: 46px 72px;
       animation: scroll 14s linear infinite;
       z-index: 3;
       filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35));
@@ -91,18 +91,17 @@
     }
 
     @keyframes scroll {
-      to { background-position: -640px 0; }
+      to { background-position: -460px 0; }
     }
 
     /* Gatos voladores */
     .flyer {
       position: fixed;
       z-index: 2;
-      width: var(--s, 70px);
+      width: calc(var(--s, 70px) * 0.628);
       height: var(--s, 70px);
-      border-radius: 50%;
-      background: url("gato.webp") center / cover;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+      background: url("gato-recorte.png") center / contain no-repeat;
+      filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.35));
       pointer-events: none;
     }
 
@@ -138,11 +137,11 @@
     .pop {
       position: fixed;
       z-index: 6;
-      width: 56px;
-      height: 56px;
-      margin: -28px 0 0 -28px;
-      border-radius: 50%;
-      background: url("gato.webp") center / cover;
+      width: 44px;
+      height: 70px;
+      margin: -35px 0 0 -22px;
+      background: url("gato-recorte.png") center / contain no-repeat;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35));
       pointer-events: none;
       animation: pop 1.1s cubic-bezier(.2, .7, .3, 1) forwards;
     }
@@ -307,7 +306,7 @@
         for (let i = 0; i < 7; i++) {
           const el = document.createElement("span");
           el.className = "flyer flyer--float";
-          el.style.setProperty("--s", rand(46, 92) + "px");
+          el.style.setProperty("--s", rand(80, 140) + "px");
           el.style.setProperty("--d", rand(8, 16) + "s");
           el.style.top = rand(12, 80) + "%";
           el.style.animationDelay = -rand(0, 16) + "s, " + -rand(0, 1) + "s";
@@ -316,7 +315,7 @@
         [[6, 22], [86, 18], [10, 70], [84, 66]].forEach(([x, y], i) => {
           const el = document.createElement("span");
           el.className = "flyer " + (i % 2 ? "flyer--spin" : "flyer--bounce");
-          el.style.setProperty("--s", rand(54, 80) + "px");
+          el.style.setProperty("--s", rand(90, 130) + "px");
           el.style.setProperty("--d", rand(2, 4) + "s");
           el.style.left = x + "%";
           el.style.top = y + "%";
@@ -329,7 +328,7 @@
       let released = 0;
       document.addEventListener("pointerdown", (e) => {
         if (e.target.closest(".actions")) return;
-        startMusic();
+        if (!userMuted) startMusic();
         released++;
         count.textContent = released;
         if (reduce) return;
@@ -349,6 +348,7 @@
       let ctx = null;
       let master = null;
       let playing = false;
+      let userMuted = false;
       let timer = null;
       let step = 0;
       const button = document.getElementById("music");
@@ -421,9 +421,26 @@
         osc.stop(t0 + 0.36);
       }
 
+      // Intenta sonar en cuanto carga la página. Si el navegador bloquea el audio
+      // automático, arranca con la primera interacción (clic, tecla o toque).
+      function tryAutoplay() {
+        try {
+          ctx = new (window.AudioContext || window.webkitAudioContext)();
+        } catch (e) { return; }
+        const go = () => { if (ctx.state === "running") startMusic(); };
+        ctx.resume().then(go, () => {});
+        setTimeout(go, 300);
+      }
+      tryAutoplay();
+      const firstGesture = () => {
+        if (!playing && !userMuted) { if (ctx) ctx.resume(); startMusic(); }
+        ["pointerdown", "keydown", "touchstart"].forEach((ev) => document.removeEventListener(ev, firstGesture, true));
+      };
+      ["pointerdown", "keydown", "touchstart"].forEach((ev) => document.addEventListener(ev, firstGesture, true));
+
       button.addEventListener("click", () => {
-        if (playing) stopMusic();
-        else { if (ctx) ctx.resume(); startMusic(); }
+        if (playing) { userMuted = true; stopMusic(); }
+        else { userMuted = false; if (ctx) ctx.resume(); startMusic(); }
       });
     })();
   </script>
