@@ -649,6 +649,93 @@
       100% { transform: translateX(0); opacity: 0; }
     }
 
+    /* ---------- Aviso de fotosensibilidad ---------- */
+
+    body.gated > :not(#gate) { visibility: hidden; }
+
+    #gate {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: #1b1238;
+      cursor: default;
+    }
+
+    .gate__box {
+      width: min(560px, 100%);
+      padding: 28px;
+      border-radius: 18px;
+      background: #2a1a5e;
+      color: #ffffff;
+      text-align: center;
+      box-shadow: inset 0 0 0 2px rgba(255, 225, 77, 0.6), 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .gate__icon {
+      display: block;
+      font-size: 42px;
+      line-height: 1;
+    }
+
+    .gate__box h2 {
+      margin: 12px 0 10px;
+      font-size: clamp(22px, 5vw, 30px);
+    }
+
+    .gate__box p {
+      margin: 0 0 12px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #e8e2ff;
+    }
+
+    .gate__actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 18px 0 14px;
+    }
+
+    .gate__actions button,
+    .gate__actions a {
+      padding: 11px 18px;
+      border: 0;
+      border-radius: 999px;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .gate__actions [data-enter="normal"] { background: #ffe14d; color: #1b1238; }
+    .gate__actions [data-enter="calm"] { background: #ffffff; color: #1b1238; }
+    .gate__actions a { background: transparent; color: #ffffff; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5); }
+
+    .gate__box .gate__note {
+      margin: 0;
+      font-size: 13px;
+      color: #c9bff5;
+    }
+
+    /* Modo tranquilo: sin destellos, temblores ni cambios rápidos de color */
+    body.calm .stars { animation: drift 40s linear infinite; }
+    body.calm .rainbow { animation-duration: 24s; }
+    body.calm .row { animation-duration: 14s; }
+    body.calm.party .rainbow { animation: flow 24s linear infinite; }
+    body.calm.party .card { animation: none; }
+    body.calm.ghost #flyers { animation: none; opacity: 0.6; }
+    body.calm.quake { animation: none; }
+    body.calm.flip { transform: none; }
+    body.calm.legend .row { animation-duration: 14s; }
+    body.calm.legend .title h1 { animation: none; }
+    body.calm.squeak .face { animation: tilt 1.4s ease-in-out infinite alternate; }
+    body.calm .card.shake { animation: none; }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -663,7 +750,20 @@
     }
   </style>
 </head>
-<body>
+<body class="gated">
+  <div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title" aria-describedby="gate-text">
+    <div class="gate__box">
+      <span class="gate__icon" aria-hidden="true">⚠️</span>
+      <h2 id="gate-title">Aviso de fotosensibilidad</h2>
+      <p id="gate-text">Esta página tiene colores que cambian rápido, destellos, parpadeos, movimientos bruscos de la pantalla y sonido. Si tienes epilepsia fotosensible o te mareas con facilidad, entra en modo tranquilo o vuelve al portafolio.</p>
+      <div class="gate__actions">
+        <button type="button" data-enter="normal">Entrar</button>
+        <button type="button" data-enter="calm">Entrar en modo tranquilo</button>
+        <a href="../../">Volver al portafolio</a>
+      </div>
+      <p class="gate__note">El modo tranquilo quita destellos, temblores y cambios rápidos de color. La música se silencia con la tecla M.</p>
+    </div>
+  </div>
   <div class="rainbow" aria-hidden="true"></div>
   <div class="stars" aria-hidden="true"></div>
   <div class="row row--top" aria-hidden="true"></div>
@@ -706,6 +806,8 @@
       const MUSIC_FILE = "";
 
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let gated = true;
+      let calm = reduce;
       const rand = (a, b) => a + Math.random() * (b - a);
       const randInt = (a, b) => Math.floor(rand(a, b + 1));
       const pick = (list) => list[Math.floor(Math.random() * list.length)];
@@ -761,7 +863,6 @@
         renderAchievements();
       }
 
-      setTimeout(() => unlock("paciencia"), 60000);
 
       /* ================= Gatos voladores ================= */
 
@@ -786,15 +887,16 @@
         return el;
       }
 
-      if (!reduce) {
+      function startFlyers() {
+        if (reduce) return;
         for (let i = 0; i < 7; i++) spawnFlyer("float");
         [[6, 22, "bounce"], [86, 18, "spin"], [10, 70, "bounce"], [84, 66, "spin"]].forEach(([x, y, k]) => spawnFlyer(k, x, y));
       }
 
       // Atrapar un gato volador: explota en gatitos y suma 5
       layer.addEventListener("pointerdown", (e) => {
-        const cat = e.target.closest(".flyer");
-        if (!cat || cat.classList.contains("booped")) return;
+        const cat = e.target instanceof Element ? e.target.closest(".flyer") : null;
+        if (gated || !cat || cat.classList.contains("booped")) return;
         e.stopPropagation();
         startMusic();
         cat.classList.add("booped");
@@ -880,7 +982,7 @@
       }
 
       document.addEventListener("pointerdown", (e) => {
-        if (e.target.closest(".back, details, .laser, .mouse")) return;
+        if (gated || (e.target instanceof Element && e.target.closest(".back, details, .laser, .mouse, #gate"))) return;
         startMusic();
         const now = performance.now();
         combo = now - lastClick < 450 ? Math.min(combo + 1, 12) : 1;
@@ -1038,25 +1140,56 @@
         dot.className = "laser";
         document.body.appendChild(dot);
         const chasers = [];
-        for (let i = 0; i < 4 && !reduce; i++) {
+        const count = calm ? 3 : 5;
+        for (let i = 0; i < count && !reduce; i++) {
           const c = document.createElement("span");
           c.className = "cat laser-cat";
-          c._x = rand(0, innerWidth); c._y = innerHeight;
+          c.style.setProperty("--s", rand(70, 110) + "px");
+          // Cada gato entra desde un borde distinto y persigue el punto a su manera
+          c._x = i % 2 ? rand(0, innerWidth) : (i % 4 === 0 ? -120 : innerWidth + 40);
+          c._y = i % 2 ? (i % 3 ? -140 : innerHeight + 40) : rand(0, innerHeight);
+          c._angle = (i / count) * Math.PI * 2 + rand(-0.4, 0.4);
+          c._radius = rand(110, 230);
+          c._spin = rand(0.6, 1.4) * (Math.random() < 0.5 ? -1 : 1);
+          c._speed = rand(0.05, 0.095);
+          c._phase = rand(0, Math.PI * 2);
           document.body.appendChild(c);
           chasers.push(c);
         }
         let alive = true;
         const move = () => { dot.style.left = rand(8, 92) + "%"; dot.style.top = rand(15, 82) + "%"; };
         move();
-        const mover = setInterval(move, 650);
-        (function follow() {
+        const mover = setInterval(move, 1100);
+        (function follow(now) {
           if (!alive) return;
           const r = dot.getBoundingClientRect();
-          chasers.forEach((c, i) => {
-            const speed = 0.04 + i * 0.012;
-            c._x += (r.left - 30 - c._x) * speed;
-            c._y += (r.top - 60 - c._y) * speed;
-            c.style.transform = `translate(${c._x}px, ${c._y}px) rotate(${(r.left - c._x) * 0.05}deg)`;
+          const time = (now || 0) / 1000;
+          chasers.forEach((c) => {
+            // Cada gato apunta a un punto propio alrededor del láser, que va girando
+            const a = c._angle + time * c._spin;
+            const radius = c._radius * (0.75 + 0.25 * Math.sin(time * 2 + c._phase));
+            const tx = r.left - 30 + Math.cos(a) * radius;
+            const ty = r.top - 50 + Math.sin(a) * radius * 0.7;
+            c._x += (tx - c._x) * c._speed + Math.sin(time * 6 + c._phase) * 1.2;
+            c._y += (ty - c._y) * c._speed + Math.cos(time * 5 + c._phase) * 1.2;
+          });
+          // Separación: si dos gatos se enciman, se empujan un poco
+          for (let i = 0; i < chasers.length; i++) {
+            for (let j = i + 1; j < chasers.length; j++) {
+              const A = chasers[i];
+              const B = chasers[j];
+              const dx = B._x - A._x;
+              const dy = B._y - A._y;
+              const d = Math.hypot(dx, dy) || 1;
+              if (d < 115) {
+                const push = (115 - d) * 0.2;
+                A._x -= (dx / d) * push; A._y -= (dy / d) * push;
+                B._x += (dx / d) * push; B._y += (dy / d) * push;
+              }
+            }
+          }
+          chasers.forEach((c) => {
+            c.style.transform = `translate(${c._x}px, ${c._y}px) rotate(${Math.max(-25, Math.min(25, (r.left - c._x) * 0.06))}deg)`;
           });
           requestAnimationFrame(follow);
         })();
@@ -1129,7 +1262,8 @@
       }
 
       function surprise(name) {
-        const keys = Object.keys(SURPRISES).filter((k) => k !== lastSurprise);
+        const intense = ["reves", "terremoto", "fantasma"];
+        const keys = Object.keys(SURPRISES).filter((k) => k !== lastSurprise && !(calm && intense.includes(k)));
         const key = name || pick(keys);
         lastSurprise = key;
         const s = SURPRISES[key];
@@ -1164,7 +1298,7 @@
       const WORDS = { miau: "fiesta", gato: "gigante", lluvia: "lluvia", raton: "raton", laser: "laser", fantasma: "fantasma" };
       let typed = "";
       document.addEventListener("keydown", (e) => {
-        if (e.key.length !== 1) return;
+        if (gated || e.key.length !== 1) return;
         typed = (typed + e.key.toLowerCase()).slice(-10);
         for (const [word, key] of Object.entries(WORDS)) {
           if (typed.endsWith(word)) { typed = ""; unlock("miau"); surprise(key); break; }
@@ -1263,7 +1397,7 @@
       setInterval(scheduler, 25);
 
       function startMusic() {
-        if (playing || muted) return;
+        if (gated || playing || muted) return;
         if (MUSIC_FILE) {
           fileAudio = fileAudio || Object.assign(new Audio(MUSIC_FILE), { loop: true, volume: 0.6 });
           fileAudio.play().then(() => { playing = true; }, () => {});
@@ -1303,15 +1437,34 @@
 
       // La música intenta sonar en cuanto carga la página. Si el navegador
       // bloquea el audio automático, empieza con el primer clic, tecla o toque.
-      startMusic();
-      if (ctx && !MUSIC_FILE) ctx.resume().then(() => startMusic(), () => {});
+      // Aviso de fotosensibilidad: nada se mueve ni suena hasta que la persona elige
+      const gate = document.getElementById("gate");
+      function enter(choice) {
+        gated = false;
+        calm = calm || choice === "calm";
+        document.body.classList.remove("gated");
+        document.body.classList.toggle("calm", calm);
+        try { sessionStorage.setItem("miau:aviso", calm ? "calm" : "normal"); } catch (e) { /* sin almacenamiento */ }
+        gate.remove();
+        startFlyers();
+        startMusic();
+        setTimeout(() => unlock("paciencia"), 60000);
+      }
+      gate.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-enter]");
+        if (btn) enter(btn.dataset.enter);
+      });
+      let previous = null;
+      try { previous = sessionStorage.getItem("miau:aviso"); } catch (e) { /* sin almacenamiento */ }
+      if (previous) enter(previous);
+      else gate.querySelector("[data-enter]").focus();
       ["pointerdown", "keydown", "touchstart"].forEach((ev) => document.addEventListener(ev, () => startMusic(), { capture: true }));
 
       // Tecla M sola (no como parte de una palabra secreta): silenciar o reactivar
       let mTimer = null;
       document.addEventListener("keydown", (e) => {
         clearTimeout(mTimer);
-        if (e.key.toLowerCase() !== "m") return;
+        if (gated || e.key.toLowerCase() !== "m") return;
         mTimer = setTimeout(() => {
           muted = !muted;
           if (muted) stopMusic(); else startMusic();
