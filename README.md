@@ -11,6 +11,7 @@ Muestra mis proyectos web en producción (Railway y GitHub Pages), otros trabajo
 - `script.js` — animación de la terminal del inicio (se desactiva con "reducir movimiento").
 - `assets/projects/` — capturas de los proyectos.
 - `proyectos/atmosfera/` — copia publicada de Atmósfera (clima en vivo, de Ambientes_Web).
+- `proyectos/rentas-demo/` y `proyectos/eduplatform-demo/` — demos estáticas de Rentas Aurora y EduPlatform con datos de ejemplo en `localStorage` (no usan la base de datos de Railway).
 - `proyectos/air-player/` — copia de Air Player (de Retos_Web) que entra automáticamente con la cuenta de demostración `githubtest`.
 
 ## Diseño
