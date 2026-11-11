@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cristopher Ramos · Portafolio</title>
   <meta name="description" content="Portafolio de Cristopher Leonardo Ramos Ramírez (Fazzer325), estudiante de Ingeniería en Sistemas y Ciberseguridad. Aplicaciones web con Laravel, PHP, JavaScript y MySQL desplegadas en Railway.">
-  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#2443f0">
   <meta property="og:title" content="Cristopher Ramos · Portafolio">
   <meta property="og:description" content="Estudiante de Ingeniería en Sistemas y Ciberseguridad. Aplicaciones web, bots y herramientas.">
   <meta property="og:type" content="website">
@@ -33,7 +32,7 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <a class="btn btn--dark btn--sm nav__cta" href="https://github.com/Fazzer325" target="_blank" rel="noopener">
+      <a class="btn btn--primary btn--sm nav__cta" href="https://github.com/Fazzer325" target="_blank" rel="noopener">
         <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
         GitHub
       </a>
@@ -42,7 +41,8 @@
 
   <main id="inicio">
     <!-- Hero -->
-    <section class="hero wrap">
+    <section class="hero">
+      <div class="wrap hero__inner">
       <div class="hero__text">
         <p class="status"><span class="status__dot" aria-hidden="true"></span>Disponible para prácticas y proyectos</p>
         <h1 class="hero__title">Cristopher<br>Ramos Ramírez</h1>
@@ -52,8 +52,8 @@
           y las mantengo en producción.
         </p>
         <div class="hero__actions">
-          <a class="btn btn--dark" href="#proyectos">Ver proyectos</a>
-          <a class="btn btn--ghost" href="https://discord.com/users/437798983050723330" target="_blank" rel="noopener">Escribirme en Discord</a>
+          <a class="btn btn--sun" href="#proyectos">Ver proyectos</a>
+          <a class="btn btn--onhero" href="https://discord.com/users/437798983050723330" target="_blank" rel="noopener">Escribirme en Discord</a>
         </div>
       </div>
 
@@ -63,15 +63,16 @@
           <span class="term__title">fazzer@portafolio: ~</span>
         </div>
         <pre class="term__body" aria-hidden="true"><code id="term-output"><span class="p">$</span> whoami
-Cristopher Leonardo Ramos Ramírez (Fazzer)
+<span class="o">Cristopher Leonardo Ramos Ramírez</span> <span class="y">(Fazzer)</span>
 <span class="p">$</span> cat enfoque.txt
-Desarrollo web full stack · Ciberseguridad
+<span class="o">Desarrollo web full stack · </span><span class="k">Ciberseguridad</span>
 <span class="p">$</span> ls stack/
-php  laravel  javascript  java  python  mysql
+<span class="y">php  laravel  javascript</span>  <span class="o">java  python  mysql</span>
 <span class="p">$</span> railway status
-<span class="ok">✓</span> rentasaurora.up.railway.app   online
-<span class="ok">✓</span> eduplatforms.up.railway.app   online
+<span class="ok">✓</span> <span class="o">rentasaurora.up.railway.app</span>   <span class="ok">online</span>
+<span class="ok">✓</span> <span class="o">eduplatforms.up.railway.app</span>   <span class="ok">online</span>
 <span class="p">$</span> <span class="cursor"></span></code></pre>
+      </div>
       </div>
     </section>
 
@@ -82,7 +83,7 @@ php  laravel  javascript  java  python  mysql
         <p>Aplicaciones publicadas que puedes abrir ahora mismo. Rentas Aurora y EduPlatform corren en Railway con MySQL y además tienen una demo interactiva con datos de ejemplo.</p>
       </div>
 
-      <article class="project project--lead">
+      <article class="project project--lead p-rentas">
         <a class="shot" href="proyectos/rentas-demo/" tabindex="-1" aria-hidden="true">
           <span class="shot__bar"><i></i><i></i><i></i><span class="shot__url">fazzer325.github.io/proyectos/rentas-demo</span></span>
           <img src="assets/projects/rentas.webp" alt="" width="1280" height="800" loading="lazy">
@@ -104,7 +105,7 @@ php  laravel  javascript  java  python  mysql
             <li>Laravel 13</li><li>PHP 8.3</li><li>MySQL 8</li><li>Vite</li><li>Blade</li><li>Railway</li>
           </ul>
           <div class="project__links">
-            <a class="btn btn--dark btn--sm" href="proyectos/rentas-demo/">Abrir demo</a>
+            <a class="btn btn--project btn--sm" href="proyectos/rentas-demo/">Abrir demo</a>
             <a class="link" href="https://rentasaurora.up.railway.app/" target="_blank" rel="noopener">Abrir sitio original<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
           </div>
           <p class="note">La demo trae datos de ejemplo y guarda tus cambios solo en tu navegador.</p>
@@ -112,7 +113,7 @@ php  laravel  javascript  java  python  mysql
       </article>
 
       <div class="grid">
-        <article class="project">
+        <article class="project project--card p-edu">
           <a class="shot" href="proyectos/eduplatform-demo/" tabindex="-1" aria-hidden="true">
             <span class="shot__bar"><i></i><i></i><i></i><span class="shot__url">fazzer325.github.io/proyectos/eduplatform-demo</span></span>
             <img src="assets/projects/eduplatform.webp" alt="" width="1280" height="800" loading="lazy">
@@ -129,14 +130,14 @@ php  laravel  javascript  java  python  mysql
               <li>PHP 8.5</li><li>MySQL</li><li>Docker</li><li>Apache</li><li>KaTeX</li><li>Railway</li>
             </ul>
             <div class="project__links">
-              <a class="btn btn--dark btn--sm" href="proyectos/eduplatform-demo/">Abrir demo</a>
+              <a class="btn btn--project btn--sm" href="proyectos/eduplatform-demo/">Abrir demo</a>
               <a class="link" href="https://eduplatforms.up.railway.app/" target="_blank" rel="noopener">Abrir sitio original<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
             </div>
             <p class="note">La demo trae cursos, alumnos y exámenes de ejemplo. Entra como alumna o como ponente.</p>
           </div>
         </article>
 
-        <article class="project">
+        <article class="project project--card p-atmos">
           <a class="shot" href="proyectos/atmosfera/" tabindex="-1" aria-hidden="true">
             <span class="shot__bar"><i></i><i></i><i></i><span class="shot__url">fazzer325.github.io/proyectos/atmosfera</span></span>
             <img src="assets/projects/clima.webp" alt="" width="1280" height="800" loading="lazy">
@@ -153,14 +154,14 @@ php  laravel  javascript  java  python  mysql
               <li>JavaScript</li><li>Fetch API</li><li>Open-Meteo</li><li>CSS</li><li>node:test</li>
             </ul>
             <div class="project__links">
-              <a class="link" href="proyectos/atmosfera/">Abrir sitio<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+              <a class="btn btn--project btn--sm" href="proyectos/atmosfera/">Abrir sitio<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
               <a class="link link--muted" href="https://github.com/Fazzer325/Ambientes_Web/tree/main/src/_3Web%20Clima%20IA" target="_blank" rel="noopener">Código</a>
             </div>
           </div>
         </article>
       </div>
 
-      <article class="project project--set">
+      <article class="project project--set p-retos">
         <div class="project__body project__body--wide">
           <div>
             <h3>Retos Web</h3>
@@ -199,28 +200,32 @@ php  laravel  javascript  java  python  mysql
         <p>Bots, mods y ejercicios de la carrera que no son sitios web, pero muestran cómo resuelvo problemas.</p>
       </div>
       <ul class="rows">
-        <li class="row">
+        <li class="row w-discord">
+          <span class="row__icon" aria-hidden="true">B</span>
           <div class="row__main">
             <h3>BotDisc</h3>
             <p>Bot de Discord con comandos slash: soundboard que recorta audio de YouTube, reproductor de música y visor compartido de publicaciones. Desplegado en Railway con Docker y pruebas automatizadas.</p>
           </div>
           <ul class="tags" aria-label="Tecnologías"><li>Node.js</li><li>discord.js</li><li>Docker</li><li>Railway</li></ul>
         </li>
-        <li class="row">
+        <li class="row w-game">
+          <span class="row__icon" aria-hidden="true">G</span>
           <div class="row__main">
             <h3><a href="https://github.com/Fazzer325/Gunsaw-Auto-Allies" target="_blank" rel="noopener">Gunsaw Auto Allies</a></h3>
             <p>Mod para el juego Gunsaw que agrega aliados con IA configurables: formaciones, órdenes manuales, rescate y marcadores. Publicado con release descargable.</p>
           </div>
           <ul class="tags" aria-label="Tecnologías"><li>C#</li><li>BepInEx 5</li><li>Harmony</li></ul>
         </li>
-        <li class="row">
+        <li class="row w-crypto">
+          <span class="row__icon" aria-hidden="true">#</span>
           <div class="row__main">
             <h3>Matemáticas para encriptación</h3>
             <p>Implementaciones de cifrado César y Vigenère, codificación Huffman, algoritmo de Euclides y pruebas de primalidad.</p>
           </div>
           <ul class="tags" aria-label="Tecnologías"><li>Python</li><li>Criptografía</li></ul>
         </li>
-        <li class="row">
+        <li class="row w-java">
+          <span class="row__icon" aria-hidden="true">J</span>
           <div class="row__main">
             <h3>Java de la carrera</h3>
             <p>Compresores con codificación Rice y Tunstall, además de juegos de consola como Batalla Naval, Memorama y Gato hechos con programación orientada a objetos.</p>
@@ -237,23 +242,23 @@ php  laravel  javascript  java  python  mysql
         <p>Lo que uso a diario y lo que ya llevé a producción.</p>
       </div>
       <dl class="stack">
-        <div class="stack__row">
+        <div class="stack__row s-lang">
           <dt>Lenguajes</dt>
           <dd><ul class="tags"><li>PHP</li><li>JavaScript</li><li>Java</li><li>Python</li><li>C#</li><li>Kotlin</li><li>SQL</li></ul></dd>
         </div>
-        <div class="stack__row">
+        <div class="stack__row s-web">
           <dt>Web</dt>
           <dd><ul class="tags"><li>Laravel</li><li>Django</li><li>Node.js</li><li>HTML</li><li>CSS</li><li>Vite</li></ul></dd>
         </div>
-        <div class="stack__row">
+        <div class="stack__row s-db">
           <dt>Bases de datos</dt>
           <dd><ul class="tags"><li>MySQL</li><li>MariaDB</li><li>PostgreSQL</li><li>SQLite</li></ul></dd>
         </div>
-        <div class="stack__row">
+        <div class="stack__row s-deploy">
           <dt>Despliegue</dt>
           <dd><ul class="tags"><li>Railway</li><li>Docker</li><li>GitHub Pages</li><li>Apache</li><li>Ubuntu</li></ul></dd>
         </div>
-        <div class="stack__row">
+        <div class="stack__row s-tools">
           <dt>Herramientas</dt>
           <dd><ul class="tags"><li>Git</li><li>GitHub</li><li>Postman</li><li>npm</li><li>Composer</li><li>IntelliJ IDEA</li><li>PyCharm</li><li>VS Code</li><li>Unity</li></ul></dd>
         </div>
@@ -268,14 +273,14 @@ php  laravel  javascript  java  python  mysql
       </div>
       <ul class="contact__list">
         <li>
-          <a class="contact__item" href="https://github.com/Fazzer325" target="_blank" rel="noopener">
+          <a class="contact__item contact__item--gh" href="https://github.com/Fazzer325" target="_blank" rel="noopener">
             <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             <span class="contact__label">GitHub</span>
             <span class="contact__value">github.com/Fazzer325</span>
           </a>
         </li>
         <li>
-          <a class="contact__item" href="https://discord.com/users/437798983050723330" target="_blank" rel="noopener">
+          <a class="contact__item contact__item--dc" href="https://discord.com/users/437798983050723330" target="_blank" rel="noopener">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.32 4.37A19.8 19.8 0 0 0 15.4 2.85a13.7 13.7 0 0 0-.63 1.29 18.4 18.4 0 0 0-5.5 0 13 13 0 0 0-.64-1.29 19.7 19.7 0 0 0-4.92 1.52C.6 9.05-.24 13.6.18 18.1a19.9 19.9 0 0 0 6.03 3.05c.49-.66.92-1.36 1.29-2.1a12.9 12.9 0 0 1-2.03-.97l.5-.39a14.2 14.2 0 0 0 12.06 0l.5.39c-.65.38-1.33.71-2.04.98.37.73.8 1.43 1.29 2.09a19.8 19.8 0 0 0 6.04-3.05c.5-5.2-.84-9.72-3.5-13.73ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42c1.21 0 2.18 1.09 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42c1.21 0 2.18 1.09 2.16 2.42 0 1.34-.95 2.42-2.16 2.42Z"/></svg>
             <span class="contact__label">Discord</span>
             <span class="contact__value">@Fazzer</span>
