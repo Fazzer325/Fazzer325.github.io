@@ -1,24 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>PORTAFOLIO</title>
-    <link rel="icon" type="image/png" href="https://images.seeklogo.com/logo-png/49/2/boykisser-logo-png_seeklogo-494559.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cristopher Ramos · Portafolio</title>
+  <meta name="description" content="Portafolio de Cristopher Leonardo Ramos Ramírez (Fazzer325), estudiante de Ingeniería en Sistemas y Ciberseguridad. Aplicaciones web con Laravel, PHP, JavaScript y MySQL desplegadas en Railway.">
+  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Cristopher Ramos · Portafolio">
+  <meta property="og:description" content="Estudiante de Ingeniería en Sistemas y Ciberseguridad. Aplicaciones web, bots y herramientas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fazzer325.github.io/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="Panel-Principal">
-    <h1>PORTAFOLIO</h1>
-    <span id="Nombre">Cristopher Leonardo Ramos Ramirez</span>
-    <span id="Descripcion">Futuro ingeniero en sistemas y ciberseguridad, actualmente cursando 5° Semestre De la Carrera. <br><br>
-        Con Conocimientos en: Java, SQL, Python, JavaScript, HTML, CSS. <br><br>
-        <a href="Fazzer325.github.io/Retos_Web/"> Retos Web</a>
+  <a class="skip" href="#proyectos">Ir a los proyectos</a>
 
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#inicio" aria-label="Inicio">
+        <span class="brand__prompt" aria-hidden="true">~/</span>fazzer325
+      </a>
+      <nav aria-label="Secciones">
+        <ul class="nav__links">
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#otros">Otros trabajos</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--dark btn--sm nav__cta" href="https://github.com/Fazzer325" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </header>
 
+  <main id="inicio">
+    <!-- Hero -->
+    <section class="hero wrap">
+      <div class="hero__text">
+        <p class="status"><span class="status__dot" aria-hidden="true"></span>Disponible para prácticas y proyectos</p>
+        <h1 class="hero__title">Cristopher<br>Ramos Ramírez</h1>
+        <p class="hero__lead">
+          Estudiante de 5.º semestre de Ingeniería en Sistemas y Ciberseguridad.
+          Construyo aplicaciones web completas, desde la base de datos hasta el despliegue,
+          y las mantengo en producción.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--dark" href="#proyectos">Ver proyectos</a>
+          <a class="btn btn--ghost" href="https://discord.com/users/437798983050723330" target="_blank" rel="noopener">Escribirme en Discord</a>
+        </div>
+      </div>
 
-    </span>
+      <div class="term" role="img" aria-label="Terminal con un resumen: Cristopher Ramos, estudiante de sistemas y ciberseguridad; stack PHP, Laravel, JavaScript, Java, Python y MySQL; dos aplicaciones desplegadas en Railway.">
+        <div class="term__bar" aria-hidden="true">
+          <span class="term__dots"><i></i><i></i><i></i></span>
+          <span class="term__title">fazzer@portafolio: ~</span>
+        </div>
+        <pre class="term__body" aria-hidden="true"><code id="term-output"><span class="p">$</span> whoami
+Cristopher Leonardo Ramos Ramírez (Fazzer)
+<span class="p">$</span> cat enfoque.txt
+Desarrollo web full stack · Ciberseguridad
+<span class="p">$</span> ls stack/
+php  laravel  javascript  java  python  mysql
+<span class="p">$</span> railway status
+<span class="ok">✓</span> rentasaurora.up.railway.app   online
+<span class="ok">✓</span> eduplatforms.up.railway.app   online
+<span class="p">$</span> <span class="cursor"></span></code></pre>
+      </div>
+    </section>
 
-</div>
+    <!-- Proyectos -->
+    <section id="proyectos" class="section wrap" aria-labelledby="proyectos-h">
+      <div class="section__head">
+        <h2 id="proyectos-h">Proyectos web</h2>
+        <p>Aplicaciones publicadas que puedes abrir ahora mismo. Las dos primeras corren en Railway con MySQL; los retos están en GitHub Pages.</p>
+      </div>
 
+      <article class="project project--lead">
+        <a class="shot" href="https://rentasaurora.up.railway.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <span class="shot__bar"><i></i><i></i><i></i><span class="shot__url">rentasaurora.up.railway.app</span></span>
+          <img src="assets/projects/rentas.webp" alt="" width="1280" height="800" loading="lazy">
+        </a>
+        <div class="project__body">
+          <h3>Rentas Aurora</h3>
+          <p class="project__kind">Sistema de administración de rentas · SaaS multi-cliente</p>
+          <p>
+            Cada cliente administra sus propiedades, inquilinos, contratos y cobros desde el celular.
+            Los trabajadores registran pagos que requieren aprobación, y un panel comercial separado
+            gestiona suscripciones sin ver los expedientes privados de cada cliente.
+          </p>
+          <ul class="facts">
+            <li>Datos aislados por organización con autorización en servidor</li>
+            <li>Pagos parciales, anulaciones inmutables y bitácora de auditoría</li>
+            <li>Exportaciones ZIP con CSV y avisos de vencimientos y atrasos</li>
+          </ul>
+          <ul class="tags" aria-label="Tecnologías">
+            <li>Laravel 13</li><li>PHP 8.3</li><li>MySQL 8</li><li>Vite</li><li>Blade</li><li>Railway</li>
+          </ul>
+          <div class="project__links">
+            <a class="link" href="https://rentasaurora.up.railway.app/" target="_blank" rel="noopener">Abrir sitio<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+            <span class="note">Acceso solo con cuenta interna</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="grid">
+        <article class="project">
+          <a class="shot" href="https://eduplatforms.up.railway.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <span class="shot__bar"><i></i><i></i><i></i><span class="shot__url">eduplatforms.up.railway.app</span></span>
+            <img src="assets/projects/eduplatform.webp" alt="" width="1280" height="800" loading="lazy">
+          </a>
+          <div class="project__body">
+            <h3>EduPlatform</h3>
+            <p class="project__kind">Plataforma de cursos en línea</p>
+            <p>
+              Los ponentes crean cursos con clases, artículos en Markdown con fórmulas y videos;
+              los alumnos entregan actividades y presentan un examen final. Cuatro roles, del alumno
+              al SuperAdmin, con historial de revisiones.
+            </p>
+            <ul class="tags" aria-label="Tecnologías">
+              <li>PHP 8.5</li><li>MySQL</li><li>Docker</li><li>Apache</li><li>KaTeX</li><li>Railway</li>
+            </ul>
+            <div class="project__links">
+              <a class="link" href="https://eduplatforms.up.railway.app/" target="_blank" rel="noopener">Abrir sitio<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <a class="shot" href="https://github.com/Fazzer325/Ambientes_Web/tree/main/src/_3Web%20Clima%20IA" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <span class="shot__bar"><i></i><i></i><i></i><span class="shot__url">atmosfera · clima en vivo</span></span>
+            <img src="assets/projects/clima.webp" alt="" width="1280" height="800" loading="lazy">
+          </a>
+          <div class="project__body">
+            <h3>Atmósfera</h3>
+            <p class="project__kind">Clima en vivo para cinco ciudades</p>
+            <p>
+              Consulta la API de Open-Meteo y muestra temperatura, humedad, viento y amanecer
+              de Ciudad de México, Madrid, Tokio, Bogotá y Washington. La lógica de datos está
+              separada de la interfaz y tiene pruebas propias.
+            </p>
+            <ul class="tags" aria-label="Tecnologías">
+              <li>JavaScript</li><li>Fetch API</li><li>Open-Meteo</li><li>CSS</li><li>node:test</li>
+            </ul>
+            <div class="project__links">
+              <a class="link" href="https://github.com/Fazzer325/Ambientes_Web/tree/main/src/_3Web%20Clima%20IA" target="_blank" rel="noopener">Ver código<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <article class="project project--set">
+        <div class="project__body project__body--wide">
+          <div>
+            <h3>Retos Web</h3>
+            <p class="project__kind">Tres aplicaciones hechas para un concurso de desarrollo web</p>
+            <p>
+              Cada reto se evaluó por interfaz, lógica, orden del código y una URL pública funcional.
+              El reproductor y Matlingo guardan la sesión y las preferencias de cada usuario en el navegador.
+            </p>
+          </div>
+          <div class="project__links">
+            <a class="link" href="https://fazzer325.github.io/Retos_Web/">Ver colección<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+            <a class="link link--muted" href="https://github.com/Fazzer325/Retos_Web" target="_blank" rel="noopener">Código</a>
+          </div>
+        </div>
+        <ul class="minis">
+          <li class="mini">
+            <a href="https://fazzer325.github.io/Retos_Web/Tamagochi/">
+              <span class="shot shot--sm"><img src="assets/projects/tamagotchi.webp" alt="" width="1280" height="800" loading="lazy"></span>
+              <strong>Mi Tamagotchi</strong>
+              <span>Mascota virtual con un día simulado de 24 horas, eventos aleatorios y consecuencias.</span>
+            </a>
+          </li>
+          <li class="mini">
+            <a href="https://fazzer325.github.io/Retos_Web/Reproductor/">
+              <span class="shot shot--sm"><img src="assets/projects/reproductor.webp" alt="" width="1280" height="800" loading="lazy"></span>
+              <strong>Air Player</strong>
+              <span>Reproductor de música con lista, progreso, aleatorio, favoritos y volumen por cuenta.</span>
+            </a>
+          </li>
+          <li class="mini">
+            <a href="https://fazzer325.github.io/Retos_Web/Matlingo/">
+              <span class="shot shot--sm"><img src="assets/projects/matlingo.webp" alt="" width="1280" height="800" loading="lazy"></span>
+              <strong>Matlingo</strong>
+              <span>Práctica de matemáticas por temas con vidas, avance y puntuación final.</span>
+            </a>
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Otros trabajos -->
+    <section id="otros" class="section wrap" aria-labelledby="otros-h">
+      <div class="section__head">
+        <h2 id="otros-h">Otros trabajos</h2>
+        <p>Bots, mods y ejercicios de la carrera que no son sitios web, pero muestran cómo resuelvo problemas.</p>
+      </div>
+      <ul class="rows">
+        <li class="row">
+          <div class="row__main">
+            <h3>BotDisc</h3>
+            <p>Bot de Discord con comandos slash: soundboard que recorta audio de YouTube, reproductor de música y visor compartido de publicaciones. Desplegado en Railway con Docker y pruebas automatizadas.</p>
+          </div>
+          <ul class="tags" aria-label="Tecnologías"><li>Node.js</li><li>discord.js</li><li>Docker</li><li>Railway</li></ul>
+        </li>
+        <li class="row">
+          <div class="row__main">
+            <h3><a href="https://github.com/Fazzer325/Gunsaw-Auto-Allies" target="_blank" rel="noopener">Gunsaw Auto Allies</a></h3>
+            <p>Mod para el juego Gunsaw que agrega aliados con IA configurables: formaciones, órdenes manuales, rescate y marcadores. Publicado con release descargable.</p>
+          </div>
+          <ul class="tags" aria-label="Tecnologías"><li>C#</li><li>BepInEx 5</li><li>Harmony</li></ul>
+        </li>
+        <li class="row">
+          <div class="row__main">
+            <h3>Matemáticas para encriptación</h3>
+            <p>Implementaciones de cifrado César y Vigenère, codificación Huffman, algoritmo de Euclides y pruebas de primalidad.</p>
+          </div>
+          <ul class="tags" aria-label="Tecnologías"><li>Python</li><li>Criptografía</li></ul>
+        </li>
+        <li class="row">
+          <div class="row__main">
+            <h3>Java de la carrera</h3>
+            <p>Compresores con codificación Rice y Tunstall, además de juegos de consola como Batalla Naval, Memorama y Gato hechos con programación orientada a objetos.</p>
+          </div>
+          <ul class="tags" aria-label="Tecnologías"><li>Java</li><li>Kotlin</li><li>POO</li></ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Stack -->
+    <section id="stack" class="section wrap" aria-labelledby="stack-h">
+      <div class="section__head">
+        <h2 id="stack-h">Stack</h2>
+        <p>Lo que uso a diario y lo que ya llevé a producción.</p>
+      </div>
+      <dl class="stack">
+        <div class="stack__row">
+          <dt>Lenguajes</dt>
+          <dd><ul class="tags"><li>PHP</li><li>JavaScript</li><li>Java</li><li>Python</li><li>C#</li><li>Kotlin</li><li>SQL</li></ul></dd>
+        </div>
+        <div class="stack__row">
+          <dt>Web</dt>
+          <dd><ul class="tags"><li>Laravel</li><li>Django</li><li>Node.js</li><li>HTML</li><li>CSS</li><li>Vite</li></ul></dd>
+        </div>
+        <div class="stack__row">
+          <dt>Bases de datos</dt>
+          <dd><ul class="tags"><li>MySQL</li><li>MariaDB</li><li>PostgreSQL</li><li>SQLite</li></ul></dd>
+        </div>
+        <div class="stack__row">
+          <dt>Despliegue</dt>
+          <dd><ul class="tags"><li>Railway</li><li>Docker</li><li>GitHub Pages</li><li>Apache</li><li>Ubuntu</li></ul></dd>
+        </div>
+        <div class="stack__row">
+          <dt>Herramientas</dt>
+          <dd><ul class="tags"><li>Git</li><li>GitHub</li><li>Postman</li><li>npm</li><li>Composer</li><li>IntelliJ IDEA</li><li>PyCharm</li><li>VS Code</li><li>Unity</li></ul></dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section wrap contact" aria-labelledby="contacto-h">
+      <h2 id="contacto-h">¿Trabajamos juntos?</h2>
+      <p>Busco prácticas profesionales y proyectos donde pueda aportar en desarrollo web o seguridad. Escríbeme por Discord o revisa mi código en GitHub.</p>
+      <div class="hero__actions">
+        <a class="btn btn--dark" href="https://discord.com/users/437798983050723330" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.32 4.37A19.8 19.8 0 0 0 15.4 2.85a13.7 13.7 0 0 0-.63 1.29 18.4 18.4 0 0 0-5.5 0 13 13 0 0 0-.64-1.29 19.7 19.7 0 0 0-4.92 1.52C.6 9.05-.24 13.6.18 18.1a19.9 19.9 0 0 0 6.03 3.05c.49-.66.92-1.36 1.29-2.1a12.9 12.9 0 0 1-2.03-.97l.5-.39a14.2 14.2 0 0 0 12.06 0l.5.39c-.65.38-1.33.71-2.04.98.37.73.8 1.43 1.29 2.09a19.8 19.8 0 0 0 6.04-3.05c.5-5.2-.84-9.72-3.5-13.73ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42c1.21 0 2.18 1.09 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42s.96-2.42 2.16-2.42c1.21 0 2.18 1.09 2.16 2.42 0 1.34-.95 2.42-2.16 2.42Z"/></svg>
+          Discord · @Fazzer
+        </a>
+        <a class="btn btn--ghost" href="https://github.com/Fazzer325" target="_blank" rel="noopener">github.com/Fazzer325</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>© 2026 Cristopher Leonardo Ramos Ramírez</span>
+      <span>Hecho a mano con HTML, CSS y JavaScript · Publicado en GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
